@@ -1,0 +1,41 @@
+# Settings for the HPRC MCP server. Every key is optional.
+
+[cluster]
+name = "Grace"
+host = "grace"                 # an alias from ~/.ssh/config
+control_path = "~/.ssh/cm-%C"  # must match ControlPath for Host grace in ~/.ssh/config
+jobs_dir = "mcp_jobs"          # under $SCRATCH
+
+[limits]                       # checked before every submission
+partitions = ["short", "gpu"]  # empty list = any partition
+max_minutes = 60
+max_nodes = 1
+max_gpus = 1
+
+[local]
+upload_dir = "examples"        # the only laptop folder the AI may copy files from
+
+# Folder pairs the AI may sync with rsync (sync_folder tool). It can trigger a sync,
+# never choose the paths. push = laptop -> cluster, pull = cluster -> laptop.
+# `local` is relative to this repo or absolute (~ allowed); `remote` is under $SCRATCH.
+# Nothing is ever deleted on either side.
+
+[sync.examples]
+local = "examples"
+remote = "mcp_jobs"
+direction = "push"
+
+# Example for your own project (laptop mode only; fill in your own paths):
+# [sync.my-project]
+# local = "~/code/my-project"
+# remote = "my-project"
+# direction = "push"
+# exclude = [".git", ".venv", "__pycache__", "data"]
+#
+# [sync.my-results]
+# local = "~/results"
+# remote = "my-project/results"
+# direction = "pull"
+
+[safety]
+allow_any_commands = false     # keep false when sharing: job scripts may only run examples/ programs

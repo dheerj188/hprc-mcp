@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mcp.json
+.DS_Store
+PRESENTER_NOTES.md
+*.bak*
+slides/

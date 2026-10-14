@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "hprc": {
+      "command": "/full/path/to/uv",
+      "args": [
+        "run",
+        "--directory",
+        "/full/path/to/hprc-mcp",
+        "hprc-mcp"
+      ],
+      "env": {
+        "HPRC_MCP_BACKEND": "ssh"
+      }
+    },
+    "hprc-mock": {
+      "command": "/full/path/to/uv",
+      "args": [
+        "run",
+        "--directory",
+        "/full/path/to/hprc-mcp",
+        "hprc-mcp"
+      ],
+      "env": {
+        "HPRC_MCP_BACKEND": "mock"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+[project]
+name = "hprc-mcp"
+version = "0.1.0"
+description = "An MCP server that connects AI apps to the TAMU HPRC Grace cluster (ENG 689 MCP tutorial)"
+requires-python = ">=3.11"
+dependencies = ["mcp==2.3.0"]
+
+[project.scripts]
+hprc-mcp = "hprc_mcp.server:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["hprc_mcp"]

@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__hprc__connection_status",
+      "mcp__hprc__hprc_guide",
+      "mcp__hprc__find_software",
+      "mcp__hprc__cluster_status",
+      "mcp__hprc__check_quota",
+      "mcp__hprc__list_files",
+      "mcp__hprc__my_jobs",
+      "mcp__hprc__job_details",
+      "mcp__hprc__job_output",
+      "mcp__hprc__end_session"
+    ],
+    "ask": [
+      "mcp__hprc__submit_job",
+      "mcp__hprc__cancel_job",
+      "mcp__hprc__copy_to_cluster"
+    ],
+    "deny": [
+      "Bash",
+      "Edit",
+      "Write",
+      "NotebookEdit",
+      "WebFetch",
+      "WebSearch",
+      "Read(~/.ssh/**)",
+      "Read(~/.claude/**)",
+      "Read(~/.config/**)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "hprc"
+  ]
+}
